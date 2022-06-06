@@ -131,7 +131,7 @@ noise = { version = "0.7", default-features = false }
 obj = "0.10"
 png = "0.17"
 rand = "0.7.2"
-winit = "0.26"
+winit = { package = "tao", path = "../../tao/" }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
 async-executor = "1.0"

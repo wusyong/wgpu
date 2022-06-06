@@ -266,30 +266,30 @@ fn start<E: Example>(
                 surface.configure(&device, &config);
             }
             event::Event::WindowEvent { event, .. } => match event {
-                WindowEvent::KeyboardInput {
-                    input:
-                        event::KeyboardInput {
-                            virtual_keycode: Some(event::VirtualKeyCode::Escape),
-                            state: event::ElementState::Pressed,
-                            ..
-                        },
-                    ..
-                }
-                | WindowEvent::CloseRequested => {
-                    *control_flow = ControlFlow::Exit;
-                }
-                #[cfg(not(target_arch = "wasm32"))]
-                WindowEvent::KeyboardInput {
-                    input:
-                        event::KeyboardInput {
-                            virtual_keycode: Some(event::VirtualKeyCode::R),
-                            state: event::ElementState::Pressed,
-                            ..
-                        },
-                    ..
-                } => {
-                    println!("{:#?}", instance.generate_report());
-                }
+                // WindowEvent::KeyboardInput {
+                //     input:
+                //         event::KeyboardInput {
+                //             virtual_keycode: Some(event::VirtualKeyCode::Escape),
+                //             state: event::ElementState::Pressed,
+                //             ..
+                //         },
+                //     ..
+                // }
+                // | WindowEvent::CloseRequested => {
+                //     *control_flow = ControlFlow::Exit;
+                // }
+                // #[cfg(not(target_arch = "wasm32"))]
+                // WindowEvent::KeyboardInput {
+                //     input:
+                //         event::KeyboardInput {
+                //             virtual_keycode: Some(event::VirtualKeyCode::R),
+                //             state: event::ElementState::Pressed,
+                //             ..
+                //         },
+                //     ..
+                // } => {
+                //     println!("{:#?}", instance.generate_report());
+                // }
                 _ => {
                     example.update(event);
                 }
